@@ -27,7 +27,7 @@ class ForecastFacade
     state = location.split(',')[1].upcase
     validate_state(state)
     if validate_state(state) == {:error=>"Invalid State"}      
-      return {:error=>"Invalid State"}
+      {:error=>"Invalid State"}
     else 
       validate_city(city, state)
         if validate_city(city, state) == {:error=>"Invalid City"}
