@@ -2,15 +2,15 @@ require 'date'
 class Forecast
   def initialize(weather_info)
     @time = day_time(weather_info[:current][:dt])
-    @current_temp = weather_info[:current][:temp]
-    @feels_like = weather_info[:current][:feels_like]
+    @current_temp = weather_info[:current][:temp].to_i
+    @feels_like = weather_info[:current][:feels_like].to_i
     @humidity = weather_info[:current][:humidity]
     @visibility = weather_info[:current][:visibility]
-    @uv_index = weather_info[:current][:uvi]
+    @uv_index = weather_info[:current][:uvi].to_i
     @sunrise = Time.at(weather_info[:current][:sunrise]).strftime('%-I:%M %p')
     @sunset = Time.at(weather_info[:current][:sunset]).strftime('%-I:%M %p')
-    @high_temp = weather_info[:daily][0][:temp][:max]
-    @low_temp = weather_info[:daily][0][:temp][:min]
+    @high_temp = weather_info[:daily][0][:temp][:max].to_i
+    @low_temp = weather_info[:daily][0][:temp][:min].to_i
     @hourly = hourly_forcast(weather_info[:hourly][0..23])
     @five_day_forecast = five_day_forecast(weather_info[:daily][1..5])
   end
