@@ -1,5 +1,18 @@
 require 'date'
 class Forecast
+  attr_reader :time, 
+              :current_temp, 
+              :feels_like,
+              :humidity,
+              :visibility,
+              :uv_index,
+              :sunrise,
+              :sunset,
+              :high_temp,
+              :low_temp,
+              :hourly,
+              :five_day_forecast
+
   def initialize(weather_info)
     @time = day_time(weather_info[:current][:dt])
     @current_temp = weather_info[:current][:temp].to_i
