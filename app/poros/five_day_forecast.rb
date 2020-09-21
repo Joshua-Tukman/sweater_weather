@@ -29,7 +29,7 @@ class FiveDayForecast
     if data[:snow].nil?
        { 'snow' => 0 }
     else
-      { 'snow' => data[:rain] }
+      { 'snow' => data[:snow] }
     end 
   end 
 end
