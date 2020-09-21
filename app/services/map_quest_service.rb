@@ -4,6 +4,14 @@ class MapQuestService
     response = get_json("/geocoding/v1/address?location=#{location}")
     {lat: latitude(response), lon: longitude(response)}
   end
+
+  def distance_apart(finish, start)
+    start_lat = start[:lat]
+    start_lon = start[:lon]
+    finish_lat = finish[:lat]
+    finish_lon = finish[:lon]
+    get_json("/directions/v2/route?from=#{start_lat},#{start_lon}&to=#{finish_lat},#{finish_lon}")[:route][:legs].first[:distance]
+  end 
   
   private
 
