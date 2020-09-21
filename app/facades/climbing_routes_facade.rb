@@ -1,4 +1,5 @@
 class ClimbingRoutesFacade
+  attr_reader :location, :forecast, :routes, :id
   def initialize(location)
     @location = location
     @map_quest_service = MapQuestService.new
@@ -7,8 +8,9 @@ class ClimbingRoutesFacade
     @lat_lon = @forecast.lat_lon
     @routes_service = MountainProjectService.new
     @routes = find_routes(@lat_lon)
+    @id = nil
   end
-  
+
   def find_routes(lat_lon)
     info = @routes_service.find_routes(lat_lon)[:routes]
     climbing_routes = info.map{|route_info| ClimbingRoutes.new(route_info, lat_lon)}
