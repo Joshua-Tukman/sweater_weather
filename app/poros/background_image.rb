@@ -1,5 +1,5 @@
 class BackgroundImage
-  attr_reader :location, :image_url, :id
+  attr_reader :location, :image_url
   def initialize(image_info, location)  
     @location = location
     @image_url = image_formatted(image_info)
