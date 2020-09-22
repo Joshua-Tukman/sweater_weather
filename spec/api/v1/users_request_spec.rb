@@ -24,5 +24,26 @@ RSpec.describe "Users request" do
     expect(response.status).to eq(404)
     expect(response.body).to eq("Email has already been taken")
   end 
+
+  it "returns a 404 status when password and password confirmation don't match" do
+    
+    post '/api/v1/users', params: {email: "josh.tukman@gmail.com", password: "123", password_confirmation: "321"}
+
+    expect(response.status).to eq(404)
+    expect(response.body).to eq("Password confirmation doesn't match Password")
+  end 
+
+  it "returns a 404 status when field is left empty" do
+    
+    post '/api/v1/users', params: {email: "", password: "123", password_confirmation: "123"}
+
+    expect(response.status).to eq(404)
+    expect(response.body).to eq("Email can't be blank")
+    #password left blank
+    post '/api/v1/users', params: {email: "josh.tukman@gmail.com", password: "", password_confirmation: "123"}
+
+    expect(response.status).to eq(404)
+    expect(response.body).to eq("Password can't be blank, Password can't be blank, and Password digest can't be blank")
+  end 
  
 end
