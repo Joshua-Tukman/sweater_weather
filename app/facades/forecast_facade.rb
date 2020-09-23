@@ -1,5 +1,7 @@
 class ForecastFacade
-  attr_reader :location, :forecast, :id
+  attr_reader :location, 
+              :forecast, 
+              :id
   def initialize(location)
     @location = location_format(location)
     @map_quest_service = MapQuestService.new
