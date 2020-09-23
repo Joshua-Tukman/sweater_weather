@@ -1,5 +1,12 @@
 class MapQuestService
 
+  def drive_time(start, finish)
+    origin = [start[:lat],start[:lon]].join(",")
+    destination = [finish[:lat],finish[:lon]].join(",")
+    
+    get_json("/directions/v2/route?from=#{origin}&to=#{destination}")[:route][:formattedTime]
+  end 
+
   def lat_long(location)
     response = get_json("/geocoding/v1/address?location=#{location}")
     {lat: latitude(response), lon: longitude(response)}
