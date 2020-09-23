@@ -14,4 +14,8 @@ class Errors
   def invalid_credentials
     { error: "Invalid Credentials", status: 404}
   end
+  def api_key_not_found
+    { error: "API key not found", status: 401 }
+  end
+  
 end 
