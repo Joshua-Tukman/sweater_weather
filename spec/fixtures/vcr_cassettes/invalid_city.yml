@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 20 Sep 2020 20:41:58 GMT
+      - Wed, 23 Sep 2020 05:18:48 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Sun, 20 Sep 2020 20:41:58 GMT
+      - Wed, 23 Sep 2020 05:18:48 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=67725B1900236C9E1AB9C2552AA99762; Path=/; HttpOnly
+      - JSESSIONID=9BEE65A7DD30914C075D839968AE395E; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -55,5 +55,5 @@ http_interactions:
         2020 MapQuest, Inc."},"messages":[]},"options":{"maxResults":1,"thumbMaps":false,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"{:error=>\"Invalid
         City\"}"},"locations":[{"street":"Error Street","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"City
         of Johannesburg","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Gauteng","adminArea3Type":"State","adminArea1":"ZA","adminArea1Type":"Country","postalCode":"2094","geocodeQualityCode":"B3CCA","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"ZA/STR/p0/326037","unknownInput":"","type":"s","latLng":{"lat":-26.19885,"lng":28.05748},"displayLatLng":{"lat":-26.19885,"lng":28.05748}}]}]}'
-  recorded_at: Sun, 20 Sep 2020 20:41:58 GMT
+  recorded_at: Wed, 23 Sep 2020 05:18:49 GMT
 recorded_with: VCR 6.0.0
