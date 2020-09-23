@@ -18,7 +18,7 @@ RSpec.describe "Users request" do
   end
 
   it "returns a 404 status when user email is already taken" do
-    user = User.create(email: "josh.tukman@gmail.com", password: "111")
+    user = User.create(email: "josh.tukman@gmail.com", password: "111", password_confirmation: "111")
 
     headers = {"CONTENT_TYPE" => "application/json"}
     body = {'email': "josh.tukman@gmail.com", 'password': "123", 'password_confirmation': "123"}
