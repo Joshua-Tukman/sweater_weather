@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 23 Sep 2020 05:18:48 GMT
+      - Fri, 02 Oct 2020 18:51:17 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Wed, 23 Sep 2020 05:18:48 GMT
+      - Fri, 02 Oct 2020 18:51:17 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=9BEE65A7DD30914C075D839968AE395E; Path=/; HttpOnly
+      - JSESSIONID=F3F72EA67B5954DB88F5303C769D6D21; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -54,6 +54,6 @@ http_interactions:
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2020 MapQuest, Inc."},"messages":[]},"options":{"maxResults":1,"thumbMaps":false,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"{:error=>\"Invalid
         City\"}"},"locations":[{"street":"Error Street","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"City
-        of Johannesburg","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Gauteng","adminArea3Type":"State","adminArea1":"ZA","adminArea1Type":"Country","postalCode":"2094","geocodeQualityCode":"B3CCA","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"ZA/STR/p0/326037","unknownInput":"","type":"s","latLng":{"lat":-26.19885,"lng":28.05748},"displayLatLng":{"lat":-26.19885,"lng":28.05748}}]}]}'
-  recorded_at: Wed, 23 Sep 2020 05:18:49 GMT
+        of Johannesburg","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Gauteng","adminArea3Type":"State","adminArea1":"ZA","adminArea1Type":"Country","postalCode":"2094","geocodeQualityCode":"B3CCA","geocodeQuality":"STREET","dragPoint":false,"sideOfStreet":"N","linkId":"ZA/STR/p0/288408","unknownInput":"","type":"s","latLng":{"lat":-26.19885,"lng":28.05748},"displayLatLng":{"lat":-26.19885,"lng":28.05748}}]}]}'
+  recorded_at: Fri, 02 Oct 2020 18:51:17 GMT
 recorded_with: VCR 6.0.0
