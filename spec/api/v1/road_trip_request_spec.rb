@@ -8,7 +8,7 @@ RSpec.describe "Road trip request", :vcr do
     headers = {"CONTENT_TYPE" => "application/json"}
     body = {'origin': 'denver,co', 'destination': 'pueblo,co', 'api_key': "#{user.api_key}"}
     post '/api/v1/roadtrip', params: body.to_json, headers: headers
-
+    
     expect(response).to be_successful
   
     json = JSON.parse(response.body, symbolize_names:true)
@@ -18,7 +18,7 @@ RSpec.describe "Road trip request", :vcr do
     expect(json[:data][:attributes][:destination]).to eq("pueblo,co")
     expect(json[:data][:attributes][:travel_time]).to eq("01:44:01")
     expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Broken clouds")
-    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(65)
+    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(79)
   end
   it "will return error message when api_key isn't found" do
     user = User.create(email: "josh.tukman@gmail.com", password: "111", password_confirmation: "111")
@@ -81,8 +81,8 @@ RSpec.describe "Road trip request", :vcr do
     expect(json[:data][:attributes][:origin]).to eq("denver,co")
     expect(json[:data][:attributes][:destination]).to eq("castle rock,co")
     expect(json[:data][:attributes][:travel_time]).to eq("00:31:27")
-    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Overcast clouds")
-    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(58)  
+    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Broken clouds")
+    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(69)  
   end 
   it "will round down when the travel time is more than one hour and less than 30 min", :vcr do
     user = User.create(email: "josh.tukman@gmail.com", password: "111", password_confirmation: "111")
@@ -98,8 +98,8 @@ RSpec.describe "Road trip request", :vcr do
     expect(json[:data][:attributes][:origin]).to eq("denver,co")
     expect(json[:data][:attributes][:destination]).to eq("silverthorne,co")
     expect(json[:data][:attributes][:travel_time]).to eq("01:11:39")
-    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Scattered clouds")
-    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(43)  
+    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Broken clouds")
+    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(59)  
   end 
   it "will return a travel_time of 0 when the actual travel time is less than 30 min", :vcr do
     user = User.create(email: "josh.tukman@gmail.com", password: "111", password_confirmation: "111")
@@ -115,8 +115,8 @@ RSpec.describe "Road trip request", :vcr do
     expect(json[:data][:attributes][:origin]).to eq("denver,co")
     expect(json[:data][:attributes][:destination]).to eq("broomfield,co")
     expect(json[:data][:attributes][:travel_time]).to eq("00:23:26")
-    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Clear sky")
-    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(64)  
+    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Overcast clouds")
+    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(70)  
   end 
   it "will round time down to the hour when the total travel time is more than 1 hour but than than 30 min", :vcr do
     user = User.create(email: "josh.tukman@gmail.com", password: "111", password_confirmation: "111")
@@ -132,7 +132,7 @@ RSpec.describe "Road trip request", :vcr do
     expect(json[:data][:attributes][:origin]).to eq("denver,co")
     expect(json[:data][:attributes][:destination]).to eq("aspen,co")
     expect(json[:data][:attributes][:travel_time]).to eq("03:25:16")
-    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Light rain")
-    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(49)  
+    expect(json[:data][:attributes][:arrival_weather][:forecast]).to eq("Overcast clouds")
+    expect(json[:data][:attributes][:arrival_weather][:temp]).to eq(65)  
   end 
 end

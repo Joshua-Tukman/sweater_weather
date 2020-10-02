@@ -8,8 +8,8 @@ RSpec.describe ForecastFacade do
     
     expect(facade).to be_a(ForecastFacade)
     expect(facade.location).to eq("Denver, CO")
-    expect(facade.forecast.current_temp).to eq(63)
-    expect(facade.forecast.feels_like).to eq(55)
-    expect(facade.forecast.high_temp).to eq(86)  
+    expect(facade.forecast.current_temp).to eq(70)
+    expect(facade.forecast.feels_like).to eq(59)
+    expect(facade.forecast.high_temp).to eq(74)  
   end
 end

@@ -15,7 +15,7 @@ RSpec.describe WeatherService do
     expect(forecast[:hourly].first.keys).to include(:dt, :temp, :feels_like, :pressure, :humidity, :dew_point, :clouds, :visibility, :wind_speed, :wind_deg, :weather, :pop)  
     expect(forecast[:hourly].first[:weather].first[:description]).to eq("clear sky")
     expect(forecast[:hourly].length).to eq(48)
-    expect(forecast[:daily].first.keys).to include(:dt, :sunrise, :sunset, :temp, :feels_like, :pressure, :humidity, :dew_point, :wind_speed, :wind_deg, :weather, :clouds, :pop, :uvi, :rain )
+    expect(forecast[:daily].first.keys).to include(:dt, :sunrise, :sunset, :temp, :feels_like, :pressure, :humidity, :dew_point, :wind_speed, :wind_deg, :weather, :clouds, :pop, :uvi )
     expect(forecast[:daily].length).to eq(8)
   end
 end
