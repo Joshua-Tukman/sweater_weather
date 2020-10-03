@@ -19,3 +19,4 @@ RSpec.describe WeatherService do
     expect(forecast[:daily].length).to eq(8)
   end
 end
+# adding comment to test Travis CI deployment

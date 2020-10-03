@@ -1,0 +1,19 @@
+langauge: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: soyLQOuJajHt3Yt76EbT5hRvgJqvbyVk0AH8P/Yw2A6c/hBvZXQmghDyBOivLc7ZNQnyTFzMTqgCRv6LTo4mK/EPFACigRlwa6Qji8bwRlWKzp2V4XXOkGqCzMa5u3c0aalDq/Bo8aIEZbE7C7qneJlZHG8YdIaGeki5RGAr67aDgUmDxEvdrTqz4rv+1S5PTUGLAekYC3u1SdNehlfUsUHIB2wCH2BeEXDG8hmi7Z7kJ2CINt+zo9NCvVQvkhfaTk9iXuFilrFjHldbUFRvWLR8ewn5+l173E1wXCa97vzpS+yIhHqVVFbVdDbhDxES+CveN4R+rtllZlXZ1pd/Pvr9QX5XMOOsjdbotkGcgJgllL4UUoaAOs60IrXjQuZG9e24H3IskKwZZ2L7x9bBdPEl3nLqgD5ARke2qFLm3wQ8QaUP3QXzTl3IO+wgG9lGvpCiHCysVZOIdPVdWGuB5aCNDgDYTYXoDE4/dHaqXE/qqW7TDSLDTP/7D4nj1c2C+q/TE2uT76WbIzAUneyLndLDkUUTc4wmNZWhjA6fYd9vPL5an5f/3HTBpjBr+L//jGmXnOB1qtYdKD4ehU3spcg3ido5TeoXgUs7tTYgFpL8kJhCrhA44oc7RHzvGL9QtKxthNG15oD5p7d3bbIojv7uYeFN3Qiuu5BKJW04tLo=
+  app: sweater-weather-jt
+  on: master
+    repo: Joshua-Tukman/sweater_weather
+  skip_cleanup: 'true'
+env:
+  global:
+    secure: 
