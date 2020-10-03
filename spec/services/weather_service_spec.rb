@@ -20,3 +20,4 @@ RSpec.describe WeatherService do
   end
 end
 # adding comment to test Travis CI deployment
+# adding comment to test Travis CI deployment
